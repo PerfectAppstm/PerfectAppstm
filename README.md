@@ -6,6 +6,13 @@
 - 😄 Pronouns: (HE, HIM)
 - ⚡ Fun fact: (I AM AZAZEL)
 
+## Deploy
+
+You can deploy the sample Music Library+ app with Netlify:
+
+[![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy)
+
+
 <!---
 PerfectAppstm/PerfectAppstm is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.

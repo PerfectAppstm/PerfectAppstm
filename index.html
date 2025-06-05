@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Music Library+</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <h1>Library+</h1>
+      <input type="text" id="search" placeholder="Search...">
+      <div class="filter">
+        <label for="artistFilter">Artist</label>
+        <select id="artistFilter">
+          <option value="">All</option>
+        </select>
+      </div>
+      <div class="filter">
+        <label for="genreFilter">Genre</label>
+        <select id="genreFilter">
+          <option value="">All</option>
+        </select>
+      </div>
+      <div class="filter">
+        <label for="locationFilter">Location</label>
+        <select id="locationFilter">
+          <option value="">All</option>
+        </select>
+      </div>
+      <div class="filter">
+        <label for="qualitySetting">Sound Quality</label>
+        <select id="qualitySetting">
+          <option value="128">128 kbps</option>
+          <option value="256">256 kbps</option>
+          <option value="320">320 kbps</option>
+        </select>
+      </div>
+      <div class="upload">
+        <label for="uploadFile">Upload</label>
+        <input type="file" id="uploadFile">
+      </div>
+    </aside>
+    <main class="content">
+      <div class="player">
+        <audio controls id="audioPlayer">
+          <source id="audioSource" src="">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+      <div id="songList"></div>
+    </main>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>
