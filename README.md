@@ -12,6 +12,9 @@ You can deploy the sample Music Library+ app with Netlify:
 
 [![Deploy with Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy)
 
+The site files live in the `netlify/` directory. Netlify will automatically
+publish from that folder using the included `netlify.toml` configuration.
+
 
 <!---
 PerfectAppstm/PerfectAppstm is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
