@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Music Library+</title>
+  <title>DTDL3+</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet">
@@ -11,49 +11,113 @@
 <body>
   <div class="app">
     <aside class="sidebar">
-      <h1>Library+</h1>
-      <input type="text" id="search" placeholder="Search...">
-      <div class="filter">
-        <label for="artistFilter">Artist</label>
-        <select id="artistFilter">
-          <option value="">All</option>
-        </select>
-      </div>
-      <div class="filter">
-        <label for="genreFilter">Genre</label>
-        <select id="genreFilter">
-          <option value="">All</option>
-        </select>
-      </div>
-      <div class="filter">
-        <label for="locationFilter">Location</label>
-        <select id="locationFilter">
-          <option value="">All</option>
-        </select>
-      </div>
-      <div class="filter">
-        <label for="qualitySetting">Sound Quality</label>
-        <select id="qualitySetting">
-          <option value="128">128 kbps</option>
-          <option value="256">256 kbps</option>
-          <option value="320">320 kbps</option>
-        </select>
-      </div>
-      <div class="upload">
-        <label for="uploadFile">Upload</label>
-        <input type="file" id="uploadFile">
-      </div>
+      <h1>DTDL3+</h1>
+      <nav>
+        <ul>
+          <li><a href="#" data-view="home">Home</a></li>
+          <li><a href="#" data-view="daily">Daily Tasks</a></li>
+          <li><a href="#" data-view="projects">Project Progress</a></li>
+          <li><a href="#" data-view="integrations">Integrations</a></li>
+          <li><a href="#" data-view="weekly">Weekly Look</a></li>
+          <li><a href="#" data-view="monthly">Monthly Look</a></li>
+          <li><a href="#" data-view="yearly">Yearly Look</a></li>
+          <li><a href="#" data-view="broiling">Broiling Pot</a></li>
+          <li><a href="#" data-view="settings">Settings</a></li>
+        </ul>
+      </nav>
     </aside>
     <main class="content">
-      <div class="player">
-        <audio controls id="audioPlayer">
-          <source id="audioSource" src="">
-          Your browser does not support the audio element.
-        </audio>
-      </div>
-      <div id="songList"></div>
+      <section id="home" class="view">
+        <h2>Home</h2>
+        <p>Welcome to Daily To-Do List Plus!</p>
+      </section>
+
+      <section id="daily" class="view hidden">
+        <h2>Daily Tasks</h2>
+        <div id="dailyTasks"></div>
+      </section>
+
+      <section id="projects" class="view hidden">
+        <h2>Project Progress</h2>
+        <div id="projectProgress"></div>
+      </section>
+
+      <section id="integrations" class="view hidden">
+        <h2>Integrations</h2>
+        <p>Connect your favorite services.</p>
+      </section>
+
+      <section id="weekly" class="view hidden">
+        <h2>Weekly Look</h2>
+      </section>
+
+      <section id="monthly" class="view hidden">
+        <h2>Monthly Look</h2>
+      </section>
+
+      <section id="yearly" class="view hidden">
+        <h2>Yearly Look</h2>
+      </section>
+
+      <section id="broiling" class="view hidden">
+        <h2>Broiling Pot</h2>
+        <form id="broilingForm">
+          <label>Overall Vision
+            <input type="text" id="vision" required>
+          </label>
+          <label>Projects
+            <textarea id="projectsInput"></textarea>
+          </label>
+          <label>Tasks
+            <textarea id="tasksInput"></textarea>
+          </label>
+          <label>Meetings
+            <textarea id="meetingsInput"></textarea>
+          </label>
+          <label>Events
+            <textarea id="eventsInput"></textarea>
+          </label>
+          <label>Recurring Weekly Do's
+            <textarea id="weeklyInput"></textarea>
+          </label>
+          <label>Recurring Monthly Ritual's
+            <textarea id="monthlyInput"></textarea>
+          </label>
+          <label>Yearly Must's
+            <textarea id="yearlyInput"></textarea>
+          </label>
+          <label>House Chore's
+            <textarea id="choresInput"></textarea>
+          </label>
+          <label>Errand's
+            <textarea id="errandsInput"></textarea>
+          </label>
+          <label>Encouragement Style
+            <input type="text" id="encouragement">
+          </label>
+          <label>Weekly Vibe
+            <input type="text" id="weeklyVibe">
+          </label>
+          <label>Daily Vibe
+            <input type="text" id="dailyVibe">
+          </label>
+          <label>Override's
+            <textarea id="overrides"></textarea>
+          </label>
+          <label>Spotify Profile URL
+            <input type="url" id="spotifyProfile">
+          </label>
+          <button type="submit">Submit</button>
+        </form>
+        <pre id="broilingOutput"></pre>
+      </section>
+
+      <section id="settings" class="view hidden">
+        <h2>Settings</h2>
+        <p>Tune your preferences.</p>
+      </section>
     </main>
   </div>
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
