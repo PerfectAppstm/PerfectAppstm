@@ -1,63 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const player = document.getElementById('audioPlayer');
-  const source = document.getElementById('audioSource');
-  const songList = document.getElementById('songList');
-  const searchInput = document.getElementById('search');
-  const artistFilter = document.getElementById('artistFilter');
-  const genreFilter = document.getElementById('genreFilter');
-  const locationFilter = document.getElementById('locationFilter');
+  const navLinks = document.querySelectorAll('.sidebar a[data-view]');
+  const views = document.querySelectorAll('.view');
 
-  const songs = [
-    { title: 'Song One', file: 'songs/song1.mp3', artist: 'Artist A', genre: 'Rock', location: 'USA' },
-    { title: 'Song Two', file: 'songs/song2.mp3', artist: 'Artist B', genre: 'Pop', location: 'UK' }
-  ];
+  navLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const view = link.dataset.view;
+      views.forEach(v => v.classList.add('hidden'));
+      const target = document.getElementById(view);
+      if (target) target.classList.remove('hidden');
+    });
+  });
 
-  function populateFilters() {
-    const artists = [...new Set(songs.map(s => s.artist))];
-    const genres = [...new Set(songs.map(s => s.genre))];
-    const locations = [...new Set(songs.map(s => s.location))];
+  const form = document.getElementById('broilingForm');
+  const output = document.getElementById('broilingOutput');
 
-    artists.forEach(v => artistFilter.appendChild(new Option(v, v)));
-    genres.forEach(v => genreFilter.appendChild(new Option(v, v)));
-    locations.forEach(v => locationFilter.appendChild(new Option(v, v)));
-  }
+  if (form) {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const data = {
+        vision: document.getElementById('vision').value,
+        projects: document.getElementById('projectsInput').value,
+        tasks: document.getElementById('tasksInput').value,
+        meetings: document.getElementById('meetingsInput').value,
+        events: document.getElementById('eventsInput').value,
+        weekly: document.getElementById('weeklyInput').value,
+        monthly: document.getElementById('monthlyInput').value,
+        yearly: document.getElementById('yearlyInput').value,
+        chores: document.getElementById('choresInput').value,
+        errands: document.getElementById('errandsInput').value,
+        encouragement: document.getElementById('encouragement').value,
+        weeklyVibe: document.getElementById('weeklyVibe').value,
+        dailyVibe: document.getElementById('dailyVibe').value,
+        overrides: document.getElementById('overrides').value,
+        spotify: document.getElementById('spotifyProfile').value
+      };
 
-  function render(list) {
-    songList.innerHTML = '';
-    list.forEach(song => {
-      const el = document.createElement('div');
-      el.className = 'song';
-      el.textContent = song.title;
-      el.addEventListener('click', () => {
-        source.src = song.file;
-        player.load();
-        player.play();
-      });
-      songList.appendChild(el);
+      output.textContent = JSON.stringify(data, null, 2);
+      form.reset();
     });
   }
-
-  function filterSongs() {
-    const search = searchInput.value.toLowerCase();
-    const artist = artistFilter.value;
-    const genre = genreFilter.value;
-    const location = locationFilter.value;
-
-    const filtered = songs.filter(song => {
-      return (!artist || song.artist === artist) &&
-             (!genre || song.genre === genre) &&
-             (!location || song.location === location) &&
-             (song.title.toLowerCase().includes(search) || song.artist.toLowerCase().includes(search));
-    });
-
-    render(filtered);
-  }
-
-  searchInput.addEventListener('input', filterSongs);
-  artistFilter.addEventListener('change', filterSongs);
-  genreFilter.addEventListener('change', filterSongs);
-  locationFilter.addEventListener('change', filterSongs);
-
-  populateFilters();
-  render(songs);
 });
