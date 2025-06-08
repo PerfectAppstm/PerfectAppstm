@@ -11,7 +11,7 @@ body {
 }
 
 .sidebar {
-  width: 300px;
+  width: 250px;
   background-color: #1a1a1a;
   padding: 20px;
   box-sizing: border-box;
@@ -24,12 +24,46 @@ body {
   margin: 0 0 20px 0;
 }
 
-.sidebar input[type="text"],
-.sidebar select,
-.sidebar input[type="file"] {
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 8px 0;
+}
+
+.sidebar a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  color: #FF0065;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.view.hidden {
+  display: none;
+}
+
+form label {
+  display: block;
+  margin-top: 10px;
+}
+
+form input[type="text"],
+form input[type="url"],
+form textarea {
   width: 100%;
-  margin: 10px 0;
   padding: 8px;
+  margin-top: 4px;
   background-color: #222;
   color: #fff;
   border: 1px solid #444;
@@ -37,41 +71,15 @@ body {
   border-radius: 0;
 }
 
-.sidebar label {
-  display: block;
+button {
   margin-top: 10px;
-}
-
-.content {
-  flex: 1;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.player {
-  margin-bottom: 20px;
-}
-
-audio {
-  width: 100%;
-  outline: none;
-}
-
-audio::-webkit-media-controls-enclosure {
-  border-radius: 0;
-}
-
-#songList {
-  border-top: 1px solid #333;
-  padding-top: 10px;
-}
-
-#songList .song {
-  padding: 8px;
+  padding: 8px 16px;
+  background-color: #FF0065;
+  border: none;
+  color: #fff;
   cursor: pointer;
-  border-bottom: 1px solid #333;
 }
 
-#songList .song:hover {
-  background-color: #2a2a2a;
+button:hover {
+  background-color: #d40056;
 }
