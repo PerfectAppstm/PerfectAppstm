@@ -75,3 +75,53 @@ audio::-webkit-media-controls-enclosure {
 #songList .song:hover {
   background-color: #2a2a2a;
 }
+
+.support-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background-color: #FF0065;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.support-widget {
+  position: fixed;
+  bottom: 70px;
+  right: 20px;
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  padding: 15px;
+  display: none;
+  width: 250px;
+  box-sizing: border-box;
+}
+
+.support-widget h2 {
+  margin-top: 0;
+  font-size: 16px;
+  color: #FF0065;
+}
+
+.support-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.support-card {
+  background-color: #222;
+  padding: 10px;
+  text-align: center;
+}
+
+.support-card a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.support-widget.show {
+  display: block;
+}
