@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const artistFilter = document.getElementById('artistFilter');
   const genreFilter = document.getElementById('genreFilter');
   const locationFilter = document.getElementById('locationFilter');
+  const widgetButtons = document.querySelectorAll('#support button[data-target]');
+  const widgetPanels = document.querySelectorAll('#support .panel');
 
   const songs = [
     { title: 'Song One', file: 'songs/song1.mp3', artist: 'Artist A', genre: 'Rock', location: 'USA' },
@@ -57,6 +59,15 @@ document.addEventListener('DOMContentLoaded', () => {
   artistFilter.addEventListener('change', filterSongs);
   genreFilter.addEventListener('change', filterSongs);
   locationFilter.addEventListener('change', filterSongs);
+
+  widgetButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.target + 'Panel';
+      widgetPanels.forEach(p => {
+        p.hidden = p.id !== target;
+      });
+    });
+  });
 
   populateFilters();
   render(songs);

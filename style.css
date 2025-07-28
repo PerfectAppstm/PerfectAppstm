@@ -75,3 +75,32 @@ audio::-webkit-media-controls-enclosure {
 #songList .song:hover {
   background-color: #2a2a2a;
 }
+
+#support {
+  margin-top: 20px;
+}
+
+#support .widget button {
+  margin-right: 10px;
+  padding: 8px 12px;
+  background-color: #FF0065;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#support .widget button:hover {
+  background-color: #e6005c;
+}
+
+#support .panel {
+  margin-top: 10px;
+  border: 1px solid #333;
+  padding: 10px;
+}
+
+#support .legal {
+  font-size: 12px;
+  margin-top: 10px;
+  color: #888;
+}
