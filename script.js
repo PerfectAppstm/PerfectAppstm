@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const artistFilter = document.getElementById('artistFilter');
   const genreFilter = document.getElementById('genreFilter');
   const locationFilter = document.getElementById('locationFilter');
+  const supportToggle = document.getElementById('supportToggle');
+  const supportWidget = document.getElementById('supportWidget');
 
   const songs = [
     { title: 'Song One', file: 'songs/song1.mp3', artist: 'Artist A', genre: 'Rock', location: 'USA' },
@@ -57,6 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
   artistFilter.addEventListener('change', filterSongs);
   genreFilter.addEventListener('change', filterSongs);
   locationFilter.addEventListener('change', filterSongs);
+
+  supportToggle.addEventListener('click', () => {
+    supportWidget.classList.toggle('show');
+  });
 
   populateFilters();
   render(songs);
